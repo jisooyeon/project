@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+ul,li{
+    list-style: none ;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.nav {
+    width: 1200px;
+    height: 69px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    position: relative;
+}
+
+.depth1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.depth1 li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+
+.depth1>li {
+    position: relative;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.depth1>li:last-child {
+    border: none;
+}
+
+.depth1>li>a {
+    color: black;
+    width: 150px;
+    height: 0px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.depth2 {
+    position: absolute;
+    background-position: top;
+    top: 60px;
+    background-color: #efefef;
+    /* 기본상태: 안보임 */
+    display: none;
+}
+
+.nav-menu>li a:hover {
+    color: #FF5758;
+}
+
+.nav-icon img {
+    padding-right: 20px;
+}
+
+.depth1 li:nth-child(1):hover .depth2 {
+    display: block;
+}
+
+.depth1 li:nth-child(2):hover .depth2 {
+    display: block;
+}
+
+.depth1 li:nth-child(3):hover .depth2 {
+    display: block;
+}
+
+.depth1 li:nth-child(4):hover .depth2 {
+    display: block;
+}
+
+.depth1 li:nth-child(5):hover .depth2 {
+    display: block;
+}
+
+.depth2 li>a {
+    font-size: small;
+    color: black;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+/* 마우스가 1단계 메뉴에 올라가면 2단계 메뉴가 표시 */
+.depth2 li a:hover {
+    background-color: var(--main-color2);
+    color: black;
+}
+
+.depth2 li a:hover::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    margin-left: 20px;
+    animation-name: ani1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+
+.main img { 
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0; 
+}
+
+.main {
+    position: relative;
+    outline: 2px solid #333;
+    width: 1200px;
+    height: 450px;
+    margin: 20px auto;
+}
+
+.main .mains img { 
+    display:block;
+    margin: 0 auto;
+    opacity: 0;
+    transition-duration: 0.6s; /* 효과 재생 시간 */
+}
+
+.main .mains img.show { 
+    opacity: 1;
+}
